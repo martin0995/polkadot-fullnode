@@ -1,11 +1,11 @@
 FROM ubuntu:latest AS build
 
 # Install necessary dependencies
-RUN ["apt-get", "update"]
-RUN ["apt-get", "install", "-y", "curl"]
+RUN ["apt", "update"]
+RUN ["apt", "install", "-y", "wget"]
 
 # Download and make the polkadot binary executable
-RUN curl -sL https://github.com/paritytech/polkadot/releases/download/v1.0.0/polkadot -o polkadot
+RUN wget https://github.com/paritytech/polkadot/releases/download/v1.0.0/polkadot -o polkadot
 
 # Now create the final image
 FROM ubuntu:latest
