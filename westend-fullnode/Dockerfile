@@ -20,4 +20,4 @@ COPY --from=build /polkadot .
 RUN chmod +x ./polkadot
 
 # Set up the entry point for running the Westend fullnode
-ENTRYPOINT [ "polkadot", "--name", "westend-sensei-fullnode", "--chain=westend" ]
+CMD [ "polkadot", "--name", "westend-sensei-fullnode", "--chain=westend" ]
