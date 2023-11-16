@@ -3,8 +3,8 @@ FROM ubuntu:22.04 AS build
 
 # Install necessary dependencies
 RUN ["apt-get", "update"]
-RUN ["apt-get", "install"]
-RUN ["apt-get", "--fix-missing", "-y", "wget"]
+RUN ["apt-get", "upgrade"]
+RUN ["apt-get", "install", "--fix-missing", "-y", "wget"]
 
 # Install necessary dependencies, including updating package lists
 # RUN apt-get update && apt-get upgrade -y && apt-get install --fix-missing -y wget
