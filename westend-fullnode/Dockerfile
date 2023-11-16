@@ -5,7 +5,7 @@ FROM ubuntu:22.04 AS build
 # RUN ["apt-get", "install", "-y", "wget"]
 
 # Install necessary dependencies, including updating package lists
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install --fix-missing -y wget
 
 # Download and make the polkadot binary executable
 RUN wget https://github.com/paritytech/polkadot/releases/download/v1.0.0/polkadot -o polkadot
