@@ -1,4 +1,7 @@
-# Westend Fullnode (Polkadot Testnet)
+<h1 align="left">
+  <img src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png?v=029" alt="Polkadot Icon" width="50" height="50">
+  &nbsp; Westend Fullnode (Polkadot Testnet)
+</h1>
 
 Dockerfile to run a westend (Polkadot testnet) fullnode.
 
