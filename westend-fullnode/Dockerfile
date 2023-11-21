@@ -3,13 +3,13 @@ FROM ubuntu:22.04 AS build
 
 # Install necessary dependencies
 RUN apt update && \
-    apt install -y wget
+    apt install -y curl
 
 # Install necessary dependencies, including updating package lists
 # RUN apt-get update && apt-get upgrade -y && apt-get install --fix-missing -y wget
 
 # Download and make the polkadot binary executable
-RUN wget https://github.com/paritytech/polkadot/releases/download/v1.0.0/polkadot -o polkadot
+RUN curl -sL https://github.com/paritytech/polkadot/releases/download/v1.0.0/polkadot -o polkadot
 
 # Now create the final image
 FROM ubuntu:22.04
@@ -17,8 +17,10 @@ FROM ubuntu:22.04
 WORKDIR /data
 
 # Copy the polkadot binary from the build image
-COPY --from=build /polkadot .
-RUN chmod +x ./polkadot
+#COPY --from=build /polkadot .
+#RUN chmod +x ./polkadot
+COPY --from=build /polkadot /usr/local/bin/
+RUN chmod +x /usr/local/bin/polkadot
 
 # Set up the entry point for running the Westend fullnode
 CMD [ "polkadot", "--name", "westend-sensei-fullnode", "--chain=westend" ]
