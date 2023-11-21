@@ -22,7 +22,7 @@ docker build -t image-name .
 ## Run Node (specify the node's name):
 
 ```bash
-docker run -d westend-fullnode --name your-node-name --chain=westend
+docker run -d image-name --name your-node-name --chain=westend
 ```
 
 ## Check that your node is successfully running:
