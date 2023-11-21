@@ -13,18 +13,16 @@ Before running the node, please make sure to cover the following recommended req
 - 16 GB Memory
 - 300 GB Storage
 
-Finally, before running the image, go into the Dockerfile and define your node's name in the 5th line.
-
 ## Build Image:
 
 ```bash
 docker build -t image-name .
 ```
 
-## Run Node:
+## Run Node (specify the node's name):
 
 ```bash
-docker run -d image-name
+docker run -d westend-fullnode --name your-node-name --chain=westend
 ```
 
 ## Check that your node is successfully running:
