@@ -6,14 +6,17 @@
 Dockerfile to run a fullnode in the Polkadot ecosystem. You will find below all the steps on how to run your own fullnode (mainnet and testnet).
 
 ## Prerequisites:
+
 Before running the node, please make sure to cover the following recommended requirements:
 
 #### Westend (testnet):
+
 - 4 CPU
 - 16 GB Memory
 - 300 GB Storage
 
 #### Polkadot (mainnet):
+
 - 4 CPU
 - 32 GB Memory
 - 500 GB Storage
@@ -25,13 +28,17 @@ docker build -t image-name .
 ```
 
 ## Run Node:
+
 Please specify the node's name in the below command.
 
 #### Run fullnode on Westend:
+
 ```bash
-docker run -d image-name --name your-node-name --chain=westend
+docker run -d image-name --name your-node-name --chain=westend --sync=warp
 ```
+
 #### Run fullnode on Polkadot:
+
 ```bash
 docker run -d image-name --name your-node-name
 ```
